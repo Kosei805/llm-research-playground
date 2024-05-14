@@ -13,7 +13,7 @@ class ChatModel():
 
 
     if torch.cuda.is_available():
-      model = model.to("cuda")
+      self.model = self.model.to("cuda")
     
   def makePrompt(self,user_query):
     template = """[INST] <<SYS>>
