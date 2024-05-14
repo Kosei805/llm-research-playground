@@ -9,6 +9,10 @@ llm = Llama(
 
 sys_msg = "あなたは日本語を話す優秀なアシスタントです。回答には必ず日本語で答えてください。"
 
+history = ""
+
+
+
 user_query = input(':')
 prompt = """[INST] <<SYS>>
 {}
@@ -21,7 +25,7 @@ output = llm(
   prompt=prompt,
   max_tokens=512,
   stop=["[INST]","\n"],
-  echo=True,
+  echo=False,
 )
 
-print(output)
+print(output['choices'][0]['text'])
