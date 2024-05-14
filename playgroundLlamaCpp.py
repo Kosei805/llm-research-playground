@@ -1,6 +1,9 @@
 from llama_cpp import Llama
 
-model_path = 'models/DataPilot-ArrowPro-7B-KUJIRA-IQ4_NL.gguf'
+# model_path = 'models/DataPilot-ArrowPro-7B-KUJIRA-IQ4_NL.gguf'
+# model_path = 'DataPilot-ArrowPro-7B-KUJIRA-Q4_K_S.gguf'
+model_path = 'DataPilot-ArrowPro-7B-KUJIRA-Q4_K_M.gguf'
+# model_path = 'DataPilot-ArrowPro-7B-KUJIRA-Q8_0.gguf'
 
 llm = Llama(
   model_path=model_path,
