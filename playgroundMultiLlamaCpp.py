@@ -4,7 +4,7 @@ from transformers import AutoTokenizer
 model_path = 'models/DataPilot-ArrowPro-7B-KUJIRA-IQ4_NL.gguf'
 
 model_id='mistralai/Mistral-7B-Instruct-v0.2'
-tokenizer = AutoTokenizer.from_pretrained(model_id, trust_remote_code=True)
+tokenizer = AutoTokenizer.from_pretrained(model_id, trust_remote_code=True, token='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')
 
 llm = Llama(
   model_path=model_path,
@@ -13,10 +13,11 @@ llm = Llama(
 
 sys_msg = "あなたは日本語を話す優秀なアシスタントです。回答には必ず日本語で答えてください。"
 
-messages = [
-  {"role": "system", "content": sys_msg},
-]
+# messages = [
+#   {"role": "system", "content": sys_msg},
+# ]
 
+messages = []
 
 while True:
   user_query = input(':')
@@ -31,4 +32,4 @@ while True:
     echo=False,
   )
   print(output['choices'][0]['text'])
-  messages.append({"role":" assistant", "content": output['choices'][0]['text']})
+  messages.append({"role":"assistant", "content": output['choices'][0]['text']})
