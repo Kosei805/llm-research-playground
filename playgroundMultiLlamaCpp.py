@@ -4,7 +4,7 @@ from transformers import AutoTokenizer
 model_path = 'models/DataPilot-ArrowPro-7B-KUJIRA-IQ4_NL.gguf'
 
 model_id='mistralai/Mistral-7B-Instruct-v0.2'
-tokenizer = AutoTokenizer.from_pretrained(model_id, trust_remote_code=True, token='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')
+tokenizer = AutoTokenizer.from_pretrained(model_id, trust_remote_code=True, token='hf_token')
 
 llm = Llama(
   model_path=model_path,
